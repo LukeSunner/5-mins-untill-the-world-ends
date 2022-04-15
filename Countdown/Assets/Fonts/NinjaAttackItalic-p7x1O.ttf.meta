@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2de0e6ef8831b0940b4fa9b46d3a3106
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ninja Attack
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f5ec720767c6c6448a1384fb103515df, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
