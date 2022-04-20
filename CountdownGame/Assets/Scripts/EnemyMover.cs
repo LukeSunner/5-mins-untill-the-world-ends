@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    public float speed, shootSpeed, attackPower, range;
+    public float speed, shootSpeed, range, reloadTime;
     private float distToPlayer;
     
     private Rigidbody2D enemy;
@@ -20,6 +20,7 @@ public class EnemyMover : MonoBehaviour
     public Transform shootPos;
 
     public bool isDead;
+    private GameObject PlayerState;
     
     void Start()
     {
@@ -29,11 +30,18 @@ public class EnemyMover : MonoBehaviour
         playerT = player.transform;
         patrol = true;
         canShoot = true;
+        
+        PlayerState = GameObject.Find("GameManager");
     }
 
 
     void Update()
     {
+        if (PlayerState.GetComponent<PlayerState>().isDead == true)
+        {
+            canShoot = false;
+        }
+        
         if (patrol == true)
         {
             Patrol();
@@ -49,7 +57,7 @@ public class EnemyMover : MonoBehaviour
 
         if (isDead == true)
         {
-           // Destroy(GameObject);
+            Destroy(gameObject);
         }
 
         distToPlayer = Vector2.Distance(transform.position, playerT.position);
@@ -60,11 +68,11 @@ public class EnemyMover : MonoBehaviour
                 || playerT.position.x < transform.position.x && transform.localScale.x > 0)
             {
                 Flip();
-                patrol = false;
             }
 
-
-            if (canShoot = true)
+            patrol = false;
+            enemy.velocity = Vector2.zero;
+            if (canShoot == true)
             {
                 StartCoroutine(Attack());
             }
@@ -100,10 +108,10 @@ public class EnemyMover : MonoBehaviour
     IEnumerator Attack()
     {
         canShoot = false;
-        yield return new WaitForSeconds(shootSpeed);
+        yield return new WaitForSeconds(reloadTime);
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
 
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed * Time.fixedDeltaTime, 0f);
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2((shootSpeed * (Mathf.Abs(speed)/speed) * -1 * Time.fixedDeltaTime), 0f);
         canShoot = true;
     }
 }

@@ -11,15 +11,9 @@ public class bulletScript : MonoBehaviour
         StartCoroutine(Timer());
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(gameObject);
-    }
-
-
-    void Update()
-    {
-        
     }
 
     IEnumerator Timer()
