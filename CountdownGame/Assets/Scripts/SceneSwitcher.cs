@@ -7,17 +7,6 @@ public class SceneSwitcher : MonoBehaviour
 {
 
     public int scene;
-    
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
 
     public void LoadLevel()
     {
