@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: 01e434b0e0c32784fb0c7b144182c136
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2557528089126206802
+    second: upper right arm
+  - first:
+      213: 5467548587136057154
+    second: head
+  - first:
+      213: -4239653399074235224
+    second: upper left arm
+  - first:
+      213: 3015463818355881339
+    second: neck
+  - first:
+      213: 1201112683866942318
+    second: lower left arm
+  - first:
+      213: -7275117114315768674
+    second: lower right arm
+  - first:
+      213: -8053172178477755685
+    second: torso
+  - first:
+      213: 5016453391352961354
+    second: upper right leg
+  - first:
+      213: -6361165299325673170
+    second: upper left leg
+  - first:
+      213: 7576285554732855465
+    second: miniboss 1_9
+  - first:
+      213: -6479528351044347262
+    second: miniboss 1_10
+  - first:
+      213: 7759332785759916505
+    second: miniboss 1_11
+  - first:
+      213: 790601068738303394
+    second: miniboss 1_12
+  - first:
+      213: -4655073605488397134
+    second: lower left leg
+  - first:
+      213: -972931857101146517
+    second: lower right leg
+  - first:
+      213: 7821537884099318504
+    second: miniboss 1_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upper right arm
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 155
+        width: 25
+        height: 47
+      alignment: 9
+      pivot: {x: 0.44931975, y: 0.8369712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d73772f3a2e7320800000000000000
+      internalID: 2557528089126206802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: head
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 190
+        width: 42
+        height: 59
+      alignment: 9
+      pivot: {x: 0.45474935, y: 0.12419077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ffe60c872a0eb40800000000000000
+      internalID: 5467548587136057154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upper left arm
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 174
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.44931945, y: 0.7892094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac176932b9b925c0800000000000000
+      internalID: -4239653399074235224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neck
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 162
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75352ebd5419d920800000000000000
+      internalID: 3015463818355881339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lower left arm
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 141
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.70495784, y: 0.86200345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bea194f953ba010800000000000000
+      internalID: 1201112683866942318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lower right arm
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 105
+        width: 34
+        height: 37
+      alignment: 9
+      pivot: {x: 0.7608556, y: 0.80819166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cf7dd9787990b90800000000000000
+      internalID: -7275117114315768674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torso
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 63
+        width: 39
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd256ca32926d3090800000000000000
+      internalID: -8053172178477755685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upper right leg
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 73
+        width: 31
+        height: 63
+      alignment: 9
+      pivot: {x: 0.47956455, y: 0.7111686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4995e7f7c50e9540800000000000000
+      internalID: 5016453391352961354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upper left leg
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 10
+        width: 33
+        height: 93
+      alignment: 9
+      pivot: {x: 0.51919717, y: 0.7860996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21e628fcd998b7a0800000000000000
+      internalID: -6361165299325673170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miniboss 1_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 57
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a076c6329f542960800000000000000
+      internalID: 7576285554732855465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miniboss 1_10
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 55
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28adde37b471416a0800000000000000
+      internalID: -6479528351044347262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miniboss 1_11
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 57
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d11345de00beab60800000000000000
+      internalID: 7759332785759916505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miniboss 1_12
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 63
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5d035bb77c8fa00800000000000000
+      internalID: 790601068738303394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lower left leg
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 10
+        width: 22
+        height: 50
+      alignment: 9
+      pivot: {x: 0.44240847, y: 0.56335044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4319d283bd56fb0800000000000000
+      internalID: -4655073605488397134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lower right leg
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 11
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.40949866, y: 0.5808727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6633da71a37f72f0800000000000000
+      internalID: -972931857101146517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miniboss 1_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 43
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2100be34fab8c60800000000000000
+      internalID: 7821537884099318504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
