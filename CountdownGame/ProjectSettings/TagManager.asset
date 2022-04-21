@@ -7,6 +7,7 @@ TagManager:
   - EnemyTrigger
   - Enemy
   - Hitbox
+  - Platform
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,7 @@ using System.Collections;
 
 public class AnimationScriptUsingAddForce: MonoBehaviour
 {
+	
 	public float maxSpeed;
 	public float jumpPower;
 	public float accelerationSpeed;//how fast the Rigidbody will accelerate to maxSpeed
@@ -35,6 +36,8 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
 	   {
 		   myrigidbody.AddForce (new Vector2 (0, jumpPower)); //if all the above conditions are correct, then jumps
 	   }
+
+	   
    }
 
    void FixedUpdate () //change this to fixedupdate, better than update. Fixedupdate happens every physics calculation
@@ -102,6 +105,7 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
             amIGrounded = true;
             //anim.SetBool("grounded", true);
         }
+        
 
     }
     private void OnTriggerExit2D(Collider2D collision)
