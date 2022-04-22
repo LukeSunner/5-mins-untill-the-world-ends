@@ -8,11 +8,14 @@ TagManager:
   - Enemy
   - Hitbox
   - Platform
+  - Bullet
+  - tilemap
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 
