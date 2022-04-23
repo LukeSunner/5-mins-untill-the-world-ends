@@ -105,6 +105,11 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
             amIGrounded = true;
             //anim.SetBool("grounded", true);
         }
+
+        if (collision.gameObject.tag.Equals("Platform"))
+        {
+	        this.transform.parent = collision.transform;
+        }
         
 
     }
@@ -114,6 +119,10 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
         {
             amIGrounded = false;
             //anim.SetBool("grounded", false);
+        }
+        if (collision.gameObject.tag.Equals("Platform"))
+        {
+	        this.transform.parent = null;
         }
 
     }
