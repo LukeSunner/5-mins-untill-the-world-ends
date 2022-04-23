@@ -121,6 +121,11 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+	    if (collision.gameObject.tag == "Pillar")
+	    {
+		    PlayerState.GetComponent<PlayerState>().HP -= 100;
+	    }
+    	
 	    if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")
 	    {
 		    PlayerState.GetComponent<PlayerState>().HP -= 10;
