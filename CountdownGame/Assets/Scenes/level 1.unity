@@ -953,7 +953,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7769653, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32803,7 +32803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8902258710806805536, guid: 1374484d181484a4d935073021100b0f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8902258711210583223, guid: 1374484d181484a4d935073021100b0f, type: 3}
       propertyPath: m_Pivot.x
