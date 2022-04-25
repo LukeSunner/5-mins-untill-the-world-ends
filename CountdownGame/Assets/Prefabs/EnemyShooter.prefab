@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1153830835775830826}
   - component: {fileID: 1153830835775830821}
   m_Layer: 0
-  m_Name: EnemyTrigger
+  m_Name: EnemyShooter
   m_TagString: EnemyTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,12 +208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -100
   shootSpeed: 400
-  attackPower: 0
   range: 5
   reloadTime: 0.5
   bullet: {fileID: 5319036419888197496, guid: 748f5ddb03c05bd4f878f7c5af626aa3, type: 3}
   shootPos: {fileID: 1153830835539433901}
   isDead: 0
+  enemyShooter: 1
 --- !u!1 &1153830836319164881
 GameObject:
   m_ObjectHideFlags: 0

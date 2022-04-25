@@ -8,11 +8,11 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    public float speed, shootSpeed, range, reloadTime;
+    public float speed, shootSpeed, range, reloadTime, HP;
     private float distToPlayer;
     
     private Rigidbody2D enemy;
-    private bool mustFlip, patrol, canShoot;
+    private bool mustFlip, patrol, canShoot, facingRight = true;
     private GameObject player;
     private Transform playerT;
 
@@ -20,6 +20,7 @@ public class EnemyMover : MonoBehaviour
     public Transform shootPos;
 
     public bool isDead;
+    public bool enemyShooter;
     private GameObject PlayerState;
     
     void Start()
@@ -32,55 +33,88 @@ public class EnemyMover : MonoBehaviour
         canShoot = true;
         
         PlayerState = GameObject.Find("GameManager");
+        HP = 10;
     }
 
 
     void Update()
     {
-        if (PlayerState.GetComponent<PlayerState>().isDead == true)
+        if (HP <= 0)
         {
-            canShoot = false;
+            isDead = true;
         }
         
-        if (patrol == true)
-        {
-            Patrol();
-        } if (patrol == false)
-        {
-            
-        }
-       
-        if (mustFlip == true)
-        {
-            Flip();
-        }
-
-        if (isDead == true)
-        {
-            Destroy(gameObject);
-        }
-
         distToPlayer = Vector2.Distance(transform.position, playerT.position);
-
-        if (distToPlayer <= range)
+        
+        if (enemyShooter == true)
         {
-            if (playerT.position.x > transform.position.x && transform.localScale.x < 0
-                || playerT.position.x < transform.position.x && transform.localScale.x > 0)
+            if (PlayerState.GetComponent<PlayerState>().isDead == true)
+            {
+                canShoot = false;
+            }
+
+            if (patrol == true)
+            {
+                Patrol();
+            }
+
+            if (patrol == false)
+            {
+
+            }
+
+            if (mustFlip == true)
             {
                 Flip();
             }
 
-            patrol = false;
-            enemy.velocity = Vector2.zero;
-            if (canShoot == true)
+            
+
+            
+
+            if (distToPlayer <= range)
             {
-                StartCoroutine(Attack());
+                if (playerT.position.x > transform.position.x && transform.localScale.x < 0
+                    || playerT.position.x < transform.position.x && transform.localScale.x > 0)
+                {
+                    Flip();
+                }
+
+                patrol = false;
+                enemy.velocity = Vector2.zero;
+                if (canShoot == true)
+                {
+                    StartCoroutine(Attack());
+                }
             }
-        } else if (distToPlayer >= range)
-        {
-            patrol = true;
+            else if (distToPlayer >= range)
+            {
+                patrol = true;
+            }
         }
 
+        if (enemyShooter == false)
+        {
+            Patrol();
+            if (distToPlayer <= range)
+            {
+                if (playerT.position.x > transform.position.x && !facingRight)
+                {
+                    Flip();
+                }
+
+                if (playerT.position.x < transform.position.x && facingRight)
+                {
+                    Flip();
+                }
+            }
+            
+        }
+        
+        if (isDead == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Patrol()
@@ -90,7 +124,7 @@ public class EnemyMover : MonoBehaviour
 
     void Flip()
     {
-        
+        facingRight = !facingRight;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         speed *= -1;
        
@@ -102,6 +136,14 @@ public class EnemyMover : MonoBehaviour
             //mustFlip = true;
             Flip();
             print("shouldFlip");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "PlayerBullet")
+        {
+            HP -= 5;
         }
     }
 
