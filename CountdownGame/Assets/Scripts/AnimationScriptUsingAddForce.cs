@@ -12,12 +12,20 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
     public float inAirMaxSpeed;
     private GameObject PlayerState;
     private GameObject Enemy;
+    private Transform mytransform;
     Rigidbody2D myrigidbody; //sets a variable called myrigidbody of type Rigidbody2D. not written as public so will be stored privately
 	//Animator anim; //sets a variable called anim of type Animator
 	float currentSpeed; //this will be used to check for the horizontal velocity of the Rigidbody2D
 	float upSpeed;//this will be used to check for the vertical velocity of the Rigidbody2D
 	//public Transform animatorTransform;
     public bool amIGrounded;
+
+    public GameObject bullet;
+    public Transform shootPos;
+    public float shootSpeed;
+    public float reloadTime;
+
+    private bool facingRight = true;
 
 
    void Start ()
@@ -26,6 +34,7 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
 	myrigidbody = GetComponent<Rigidbody2D>(); //getcomponent Rigidbody2D and assigns it to myrigidbody
 	PlayerState = GameObject.Find("GameManager");
 	Enemy = GameObject.Find("Enemy");
+	mytransform = GetComponent<Transform>();
    }
 
    private void Update()
@@ -37,6 +46,10 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
 		   myrigidbody.AddForce (new Vector2 (0, jumpPower)); //if all the above conditions are correct, then jumps
 	   }
 
+	   /*if (Input.GetKeyDown("f") == true)
+	   {
+		   StartCoroutine(Attack());
+	   }*/
 	   
    }
 
@@ -53,13 +66,15 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
     float move = Input.GetAxis ("Horizontal"); //checks input axis on the horizontal, so A, D or arrow left right buttons. will also work with a controller
 
 		//this following if/else statement checks to see if the user pressed the right/left buttons, and tells the Animator if the right button has been pressed or the left
-		/*if (move > 0) {
-			animatorTransform.localScale = new Vector3 (-1, animatorTransform.localScale.y, animatorTransform.localScale.z); //flips the gameobject to -1 scale. Depending on which direction your gameobject started off, the -1 may need to be 1 instead this allows the animation to play in the opposite direction
-		}
-		else if (move < 0) {
-			animatorTransform.localScale = new Vector3 (1, animatorTransform.localScale.y, animatorTransform.localScale.z);
+		if (currentSpeed > 0 && facingRight == false) {
+			Flip();
 
-		}*/
+		}
+
+		if (currentSpeed < 0 && facingRight)
+		{
+			Flip();
+		}
 
 	
 
@@ -144,5 +159,19 @@ public class AnimationScriptUsingAddForce: MonoBehaviour
 	    {
 		    Enemy.GetComponent<EnemyMover>().isDead = true;
 	    }
+    }
+    
+    IEnumerator Attack()
+    {
+	    yield return new WaitForSeconds(reloadTime);
+	    GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
+
+	    newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2((shootSpeed * Mathf.Abs(myrigidbody.velocity.x/myrigidbody.velocity.x) * Time.fixedDeltaTime), 0f);
+    }
+
+    void Flip()
+    {
+	    facingRight = !facingRight;
+	    mytransform.Rotate(0f, 180f, 0f);
     }
 }
