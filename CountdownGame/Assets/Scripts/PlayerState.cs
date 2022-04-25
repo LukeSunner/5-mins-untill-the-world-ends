@@ -15,7 +15,7 @@ public class PlayerState : MonoBehaviour
     TextMeshProUGUI mText;
     private GameObject DeathScreen;
 
-    public GameObject fullHealth;
+   /* public GameObject fullHealth;
     public GameObject health90;
     public GameObject health80;
     public GameObject health70;
@@ -24,7 +24,7 @@ public class PlayerState : MonoBehaviour
     public GameObject health40;
     public GameObject health30;
     public GameObject health20;
-    public GameObject health10;
+    public GameObject health10; */
     void Start()
     {
         isDead = false;
@@ -46,7 +46,7 @@ public class PlayerState : MonoBehaviour
     {
         if (HP <= 0)
         {
-            fullHealth.SetActive(false);
+           /* fullHealth.SetActive(false);
             health10.SetActive(false);
             health20.SetActive(false);
             health30.SetActive(false);
@@ -55,12 +55,12 @@ public class PlayerState : MonoBehaviour
             health60.SetActive(false);
             health70.SetActive(false);
             health80.SetActive(false);
-            health90.SetActive(false);
+            health90.SetActive(false); */
             isDead = true;
             HP = 0;
         }
 
-        if (HP <= 10)
+       /* if (HP <= 10)
         {
             fullHealth.SetActive(false);
             health20.SetActive(false);
@@ -139,7 +139,7 @@ public class PlayerState : MonoBehaviour
         if (HP <= 90)
         {
             fullHealth.SetActive(false);
-        }
+        } */
         
         if (isDead == true)
         {
