@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4115414367946419422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5960071432247476239}
+  m_Layer: 0
+  m_Name: shootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5960071432247476239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4115414367946419422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.27, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5880225452735748150}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5880225451020274905
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +125,7 @@ GameObject:
   - component: {fileID: 5880225452735748149}
   - component: {fileID: 5880225452735748148}
   - component: {fileID: 5880225452735748155}
+  - component: {fileID: 7385376108352708527}
   - component: {fileID: 5880225452735748144}
   m_Layer: 0
   m_Name: PlayerController
@@ -115,6 +146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5880225451020274906}
+  - {fileID: 5960071432247476239}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -183,6 +215,24 @@ MonoBehaviour:
   inAirAccelerationSpeed: 60
   inAirMaxSpeed: 8
   amIGrounded: 0
+  bullet: {fileID: 5319036419888197496, guid: d0252c9a8dbc8374490c65c016863d6f, type: 3}
+  shootPos: {fileID: 5960071432247476239}
+  shootSpeed: 50
+  reloadTime: 1
+--- !u!114 &7385376108352708527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880225452735748154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6106e6866662a44a1d944de0648c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPos: {fileID: 5960071432247476239}
+  bulletPrefab: {fileID: 5319036419888197496, guid: d0252c9a8dbc8374490c65c016863d6f, type: 3}
 --- !u!70 &5880225452735748144
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

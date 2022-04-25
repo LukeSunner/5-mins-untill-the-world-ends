@@ -206,13 +206,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1ab62e7db1fd34fbdede0b4c1a2fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -100
+  speed: 100
   shootSpeed: 400
   range: 5
   reloadTime: 0.5
+  HP: 0
   bullet: {fileID: 5319036419888197496, guid: 748f5ddb03c05bd4f878f7c5af626aa3, type: 3}
   shootPos: {fileID: 1153830835539433901}
   isDead: 0
+  enemyShooter: 0
 --- !u!1 &1153830836319164881
 GameObject:
   m_ObjectHideFlags: 0
