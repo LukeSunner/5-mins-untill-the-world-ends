@@ -12,6 +12,8 @@ TagManager:
   - tilemap
   - Ground
   - Pillar
+  - PlayerBullet
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Background
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

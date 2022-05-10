@@ -143,7 +143,8 @@ public class PlayerState : MonoBehaviour
         
         if (isDead == true)
         {
-            MoveScript.GetComponent<AnimationScriptUsingAddForce>().enabled = false;
+            MoveScript.GetComponent<PlayerMovement>().enabled = false;
+            MoveScript.GetComponent<PlayerShooter>().enabled = false;
             DeathScreen.SetActive(true);
         }
         

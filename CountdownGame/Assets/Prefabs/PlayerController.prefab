@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5880225452735748150}
   - component: {fileID: 5880225452735748149}
   - component: {fileID: 5880225452735748148}
-  - component: {fileID: 5880225452735748155}
+  - component: {fileID: 4314425624622930503}
   - component: {fileID: 7385376108352708527}
   - component: {fileID: 5880225452735748144}
   m_Layer: 0
@@ -197,7 +197,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.79, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &5880225452735748155
+--- !u!114 &4314425624622930503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,19 +206,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5880225452735748154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a9be61fba7fe72459d9b631f34c5405, type: 3}
+  m_Script: {fileID: 11500000, guid: bc747f46d5af5d941b8a97f3945ab9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 8
-  jumpPower: 400
-  accelerationSpeed: 70
-  inAirAccelerationSpeed: 60
-  inAirMaxSpeed: 8
-  amIGrounded: 0
-  bullet: {fileID: 5319036419888197496, guid: d0252c9a8dbc8374490c65c016863d6f, type: 3}
-  shootPos: {fileID: 5960071432247476239}
-  shootSpeed: 50
-  reloadTime: 1
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpPower: 11
+  speed: 8
 --- !u!114 &7385376108352708527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPos: {fileID: 5960071432247476239}
   bulletPrefab: {fileID: 5319036419888197496, guid: d0252c9a8dbc8374490c65c016863d6f, type: 3}
+  reloadTime: 0
 --- !u!70 &5880225452735748144
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
