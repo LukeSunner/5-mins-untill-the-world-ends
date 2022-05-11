@@ -91,13 +91,7 @@ public class PlayerMovement : MonoBehaviour
        }
    }
 
-   private void OnTriggerEnter2D(Collider2D col)
-   {
-       if (col.tag == "Checkpoint")
-       {
-           respawnPoint = trans.position;
-       }
-   }
+
 
    void Flip()
    {
@@ -121,6 +115,10 @@ public class PlayerMovement : MonoBehaviour
                Score.scoreAmount += 25;
                Destroy(collision.gameObject);
                break;
+       }
+       if (collision.tag == "Checkpoint")
+       {
+           respawnPoint = trans.position;
        }
    }
 }
