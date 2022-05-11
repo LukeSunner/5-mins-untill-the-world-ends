@@ -77,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
        if (collision.gameObject.tag == "Pillar")
        {
            PlayerState.GetComponent<PlayerState>().HP -= 100;
-           Score.scoreAmount = 0;
        }
     	
        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")

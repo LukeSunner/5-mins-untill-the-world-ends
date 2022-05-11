@@ -71,6 +71,7 @@ public class PlayerState : MonoBehaviour
             MoveScript.GetComponent<PlayerMovement>().enabled = false;
             MoveScript.GetComponent<PlayerShooter>().enabled = false;
             DeathScreen.SetActive(true);
+            Score.scoreAmount = 0;
         }
         
         if (HP > 0)
