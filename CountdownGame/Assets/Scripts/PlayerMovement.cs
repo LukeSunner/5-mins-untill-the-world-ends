@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     
     private GameObject PlayerState;
     private GameObject Enemy;
+
+    private UnityEngine.Vector3 respawnPoint;
 
     [SerializeField] private LayerMask ground;
 
@@ -23,9 +28,11 @@ public class PlayerMovement : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         trans = GetComponent<Transform>();
         
+        
+        
         PlayerState = GameObject.Find("GameManager");
         Enemy = GameObject.Find("Enemy");
-
+        respawnPoint = trans.position;
     }
 
     
@@ -48,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
        {
            Flip();
        }
+
+       if (PlayerState.GetComponent<PlayerState>().HP <= 0)
+       {
+           trans.position = respawnPoint;
+       }
+
+       if (trans.position == respawnPoint)
+       {
+           PlayerState.GetComponent<PlayerState>().HP = 100;
+       }
    }
 
    private bool IsGrounded()
@@ -60,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
        if (collision.gameObject.tag == "Pillar")
        {
            PlayerState.GetComponent<PlayerState>().HP -= 100;
+           Score.scoreAmount = 0;
        }
     	
        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")
@@ -72,10 +90,37 @@ public class PlayerMovement : MonoBehaviour
            Enemy.GetComponent<EnemyMover>().isDead = true;
        }
    }
-   
+
+   private void OnTriggerEnter2D(Collider2D col)
+   {
+       if (col.tag == "Checkpoint")
+       {
+           respawnPoint = trans.position;
+       }
+   }
+
    void Flip()
    {
        facingRight = !facingRight;
        trans.Rotate(0f, 180f, 0f);
+   }
+
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
+       switch (collision.name)
+       {
+           case "Potion 1" :
+               Score.scoreAmount += 5;
+               Destroy(collision.gameObject);
+               break;
+           case "Potion 2" :
+               Score.scoreAmount += 10;
+               Destroy(collision.gameObject);
+               break;
+           case "Potion 3" :
+               Score.scoreAmount += 25;
+               Destroy(collision.gameObject);
+               break;
+       }
    }
 }
