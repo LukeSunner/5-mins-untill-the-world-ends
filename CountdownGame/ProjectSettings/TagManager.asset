@@ -15,6 +15,9 @@ TagManager:
   - PlayerBullet
   - Camera
   - Checkpoint
+  - Potion 1
+  - Potion 2
+  - Potion 3
   layers:
   - Default
   - TransparentFX

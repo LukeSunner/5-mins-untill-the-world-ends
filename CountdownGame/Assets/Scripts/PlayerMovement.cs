@@ -13,13 +13,20 @@ public class PlayerMovement : MonoBehaviour
     
     private GameObject PlayerState;
     private GameObject Enemy;
+    private Animator anim;
 
     private UnityEngine.Vector3 respawnPoint;
 
+    private GameObject canvas;
+    private GameObject WinScreen;
+
     [SerializeField] private LayerMask ground;
+    
+    private enum MovementState {idle, running, jumping, falling}
 
     public float jumpPower;
     public float speed;
+    private float dirX = 0f;
     
     private bool facingRight = true;
     private void Start()
@@ -27,19 +34,28 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         trans = GetComponent<Transform>();
+        anim = GetComponent<Animator>();
         
         
         
         PlayerState = GameObject.Find("GameManager");
         Enemy = GameObject.Find("Enemy");
         respawnPoint = trans.position;
+        
+        canvas = GameObject.Find("Canvas");
+        WinScreen = canvas.transform.GetChild(5).gameObject;
     }
 
     
    private void Update()
    {
-       float dirX = Input.GetAxisRaw("Horizontal");
+       dirX = Input.GetAxisRaw("Horizontal");
        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
+
+       if (dirX > 0)
+       {
+           
+       }
        
        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -65,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
        {
            PlayerState.GetComponent<PlayerState>().HP = 100;
        }
+       
+       UpdateAnimationState();
    }
 
    private bool IsGrounded()
@@ -100,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision)
    {
-       switch (collision.name)
+       switch (collision.tag)
        {
            case "Potion 1" :
                Score.scoreAmount += 5;
@@ -119,5 +137,38 @@ public class PlayerMovement : MonoBehaviour
        {
            respawnPoint = trans.position;
        }
+
+       if (collision.tag == "Finish")
+       {
+           WinScreen.SetActive(true);
+       }
+   }
+
+   private void UpdateAnimationState()
+   {
+       MovementState state;
+       if (dirX > 0f)
+       {
+           state = MovementState.running;
+       }
+       else if (dirX < 0f)
+       {
+           state = MovementState.running;
+       }
+       else
+       {
+           state = MovementState.idle;
+       }
+
+       if (rb.velocity.y > 0.1f)
+       {
+           state = MovementState.jumping;
+       }
+
+       if (rb.velocity.y < -0.1f)
+       {
+           state = MovementState.falling;
+       }
+       anim.SetInteger("state", (int)state);
    }
 }

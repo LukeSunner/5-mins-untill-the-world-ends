@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 963073152850395556}
   m_Layer: 0
   m_Name: Potion 2
-  m_TagString: Untagged
+  m_TagString: Potion 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

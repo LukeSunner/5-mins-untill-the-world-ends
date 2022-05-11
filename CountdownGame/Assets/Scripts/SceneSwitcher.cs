@@ -21,6 +21,11 @@ public class SceneSwitcher : MonoBehaviour
         print("Scene Loaded");
     }
 
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(scene + 1);
+    }
+
     public void ReloadLevel()
     {
         SceneManager.LoadScene(currentScene);

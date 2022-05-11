@@ -9,7 +9,7 @@ public class PlayerState : MonoBehaviour
 {
     public bool isDead;
     public int HP = 100;
-    public int lives = 3;
+    public int lives;
     private GameObject MoveScript;
 
     private Vector3 respawnPoint;
@@ -48,6 +48,12 @@ public class PlayerState : MonoBehaviour
     
     void Update()
     {
+        if (HP <= 0)
+        {
+            HP = 0;
+            lives -= 1;
+            isDead = true;
+        }
         print(lives);
         if (lives >= 3)
         {
@@ -79,12 +85,7 @@ public class PlayerState : MonoBehaviour
             isDead = false;
         }
         
-        if (HP <= 0)
-        {
-            isDead = true;
-            HP = 0;
-            lives -= 1;
-        }
+        
 
         
        
