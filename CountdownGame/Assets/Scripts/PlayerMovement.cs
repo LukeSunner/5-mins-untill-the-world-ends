@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
        if (collision.gameObject.tag == "Pillar")
        {
            PlayerState.GetComponent<PlayerState>().HP -= 100;
+           Score.scoreAmount = 0;
        }
     	
        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")
@@ -77,5 +79,24 @@ public class PlayerMovement : MonoBehaviour
    {
        facingRight = !facingRight;
        trans.Rotate(0f, 180f, 0f);
+   }
+
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
+       switch (collision.name)
+       {
+           case "Potion 1" :
+               Score.scoreAmount += 5;
+               Destroy(collision.gameObject);
+               break;
+           case "Potion 2" :
+               Score.scoreAmount += 10;
+               Destroy(collision.gameObject);
+               break;
+           case "Potion 3" :
+               Score.scoreAmount += 25;
+               Destroy(collision.gameObject);
+               break;
+       }
    }
 }
